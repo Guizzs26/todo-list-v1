@@ -1,3 +1,7 @@
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 /* Reset */
 
 * {
@@ -6,6 +10,8 @@
   box-sizing: border-box;
 }
 
+/* General Styles */
+
 html {
   font-size: 62.5%;
 }
@@ -13,7 +19,7 @@ html {
 body {
   height: 100vh;
 
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1;
 
@@ -29,14 +35,37 @@ body {
 .app-container {
   width: 500px;
 
-  padding: 1.2rem;
+  padding: 2.4rem;
   border-radius: 18px;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
 
   background-color: #fff;
 }
 
-/* Form section */
+/* LOGO SECTION */
+
+.title {
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  margin-bottom: 3rem;
+}
+
+.title::first-letter {
+  font-style: normal;
+}
+
+.logo-separator {
+  opacity: 30%;
+
+  margin-bottom: 2.4rem;
+}
+
+/*****************/
+/* FORM SECTION */
+/***************/
 
 /* Form layout */
 
@@ -105,3 +134,5 @@ body {
   transform: scale(0.95);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
+
+/*  */

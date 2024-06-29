@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
+import TodoLogo from "./TodoLogo";
 
 function TodoApp() {
   const [todos, setTodos] = useState([]);
@@ -23,6 +24,7 @@ function TodoApp() {
 
   return (
     <div className="app-container">
+      <TodoLogo />
       <TodoForm onAddTodo={handleAddTodo} />
       <TodoList
         todos={todos}
