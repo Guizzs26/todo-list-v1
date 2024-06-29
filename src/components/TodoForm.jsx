@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 
-function TodoForm({ onAddTask }) {
-  const [taskDescription, setTaskDescription] = useState("");
+function TodoForm({ onAddTodo }) {
+  const [todoDescription, setTodoDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!taskDescription) return;
+    if (!todoDescription) return;
 
-    const newTask = { id: Date.now(), taskDescription, isCompleted: false };
+    const newTodo = { id: Date.now(), todoDescription, isCompleted: false };
 
-    onAddTask(newTask);
+    onAddTodo(newTodo);
 
-    setTaskDescription("");
+    setTodoDescription("");
   };
 
   return (
@@ -22,8 +22,8 @@ function TodoForm({ onAddTask }) {
       <input
         type="text"
         placeholder="Add new task"
-        value={taskDescription}
-        onChange={(e) => setTaskDescription(e.target.value)}
+        value={todoDescription}
+        onChange={(e) => setTodoDescription(e.target.value)}
         className="form-input"
       />
 
