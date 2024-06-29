@@ -3,12 +3,19 @@
 function TodoItem({
   todo: { id, todoDescription, isCompleted },
   onRemoveTodo,
+  onToggleTodo,
 }) {
   return (
     <li>
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        value={isCompleted}
+        onChange={() => onToggleTodo(id)}
+      />
 
-      <span>{todoDescription}</span>
+      <span style={isCompleted ? { textDecoration: "line-through" } : {}}>
+        {todoDescription}
+      </span>
 
       <button onClick={() => onRemoveTodo(id)} className="remove-btn">
         &times;

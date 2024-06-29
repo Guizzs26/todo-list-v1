@@ -13,10 +13,22 @@ function TodoApp() {
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
   };
 
+  const handleToggleTodo = (id) => {
+    setTodos((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
+  };
+
   return (
     <div className="app-container">
       <TodoForm onAddTodo={handleAddTodo} />
-      <TodoList todos={todos} onRemoveTodo={handleRemoveTodo} />
+      <TodoList
+        todos={todos}
+        onRemoveTodo={handleRemoveTodo}
+        onToggleTodo={handleToggleTodo}
+      />
     </div>
   );
 }
