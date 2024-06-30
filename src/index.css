@@ -34,9 +34,12 @@ body {
 
 .app-container {
   width: 500px;
+  max-height: 80vh;
 
-  padding: 2.4rem;
+  padding: 2.4rem 1.8rem;
   border-radius: 18px;
+
+  overflow-y: auto;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.15);
 
   background-color: #fff;
@@ -48,7 +51,6 @@ body {
   font-size: 3rem;
   font-style: italic;
   font-weight: 500;
-  text-transform: capitalize;
 
   margin-bottom: 3rem;
 }
@@ -73,6 +75,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  margin-bottom: 3.4rem;
 }
 
 .form-input,
@@ -135,4 +139,109 @@ body {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/*  */
+/* TODO LIST AND TODO ITEM SECTION */
+
+.todo-list {
+  list-style-type: none;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  margin-bottom: 0.8rem;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+
+.todo-item::after {
+  width: 88%;
+  height: 1.05px;
+
+  content: "";
+
+  position: absolute;
+  left: 10%;
+  bottom: -0.4rem;
+
+  opacity: 50%;
+  background-color: #e9ecef;
+}
+
+.left-box {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.item-description {
+  font-size: 2.2rem;
+  word-break: break-word;
+
+  flex-grow: 1;
+}
+
+.item-description.completed {
+  text-decoration: line-through;
+
+  color: #adb5bd;
+}
+
+.remove-btn {
+  font-size: 2.4rem;
+
+  border: none;
+
+  transition: color 0.3s ease;
+
+  cursor: pointer;
+
+  color: #845ef7;
+  background: none;
+}
+
+.remove-btn:hover {
+  color: #6c42c1;
+}
+
+/* Checkbox */
+
+input[type="checkbox"] {
+  width: 2.6rem;
+  height: 2.6rem;
+
+  appearance: none;
+  border: 2px solid #845ef7;
+  border-radius: 4px;
+
+  position: relative;
+  flex-shrink: 0;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #845ef7;
+}
+
+input[type="checkbox"]:checked::after {
+  width: 3px;
+  height: 8px;
+
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -60%) rotate(45deg);
+
+  border: solid white;
+  border-width: 0 2px 2px 0;
+}

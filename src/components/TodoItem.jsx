@@ -6,20 +6,24 @@ function TodoItem({
   onToggleTodo,
 }) {
   return (
-    <li>
-      <input
-        type="checkbox"
-        value={isCompleted}
-        onChange={() => onToggleTodo(id)}
-      />
+    <li className="todo-item">
+      <div className="left-box">
+        <input
+          type="checkbox"
+          checked={isCompleted}
+          onChange={() => onToggleTodo(id)}
+        />
 
-      <span style={isCompleted ? { textDecoration: "line-through" } : {}}>
-        {todoDescription}
-      </span>
+        <span className={`item-description ${isCompleted ? "completed" : ""}`}>
+          {todoDescription}
+        </span>
+      </div>
 
       <button onClick={() => onRemoveTodo(id)} className="remove-btn">
         &times;
       </button>
+
+      {/* <hr className="item-separator" /> */}
     </li>
   );
 }
